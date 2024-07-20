@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="row">
+
+        @using (Html.BeginForm("UploadExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <label for="File">Select an Excel file of data</label>
+            @Html.TextBox("File", "", new { type = "file" })
+
+            <br />
+            <input type="submit" value="Upload" />
+        }
+    </div>
+</main>

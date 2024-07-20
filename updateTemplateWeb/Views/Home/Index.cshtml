@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Update template";
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<main>
+    <div id="miAlerta" class="alert alert-info fade" role="alert">
+        Este es un mensaje de alerta.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div class="row" style="width:100%">
+
+        @using (Html.BeginForm("UploadExcel", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="file-input">
+                <label for="File">Select an Excel file of data</label>
+                @Html.TextBox("File", "", new { type = "file" })
+            </div>
+            <br />
+            <div class="form-outline">
+                <button type="submit" class="btn btn-primary" id="updateFile">
+                    <i class="bi bi-file-earmark-excel-fill"></i> Upload
+                </button>
+
+                <button type="button" class="btn btn-secondary" id="Clear">
+                    <i class="bi bi-eraser-fill"></i> Clear
+                </button>
+            </div>
+
+        }
+    </div>
+
+    @if (!string.IsNullOrEmpty(ViewBag.messageType))
+    {
+        if (ViewBag.messageType == "0")
+        {
+            <script>
+                mostrarAlerta('An error occurred in the operation.', 'danger');
+            </script>
+        }
+        else
+        {
+            <script>                                              
+                $(document).ready(function () {
+                    mostrarAlerta('The file was generated successfully.', 'success');
+                    $.ajax({
+                        url: '@Url.Action("GenerateFile", "Home")',
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function (response) {   
+                            window.location.href = response.fileUrl;
+                            mostrarAlerta('The file was generated successfully.', 'success');
+                        },
+                        error: function (xhr, status, error) {    
+                            mostrarAlerta('An error occurred in the operation.', 'danger');
+                        }
+                    });                    
+                });
+            </script>
+        }
+    }
+</main>
+
+
+<script>
+    $(document).ready(function () {
+        $('#updateFile').click(function (event) {
+            var fileInput = $('#File');
+            var fileName = fileInput.val();
+
+            if (fileName === '') {
+
+                mostrarAlerta('Please select a file to upload.', 'warning');
+                event.preventDefault();
+                return;
+            }
+
+            var fileExtension = fileName.split('.').pop().toLowerCase();
+
+            if (fileExtension !== 'xls' && fileExtension !== 'xlsx') {
+                mostrarAlerta('Please select a valid Excel file(xls, xlsx).', 'warning');
+                event.preventDefault();
+                return;
+            }
+
+        });
+
+        $('#Clear').click(function (event) {
+            $('#File').val('');
+        });
+
+
+    });
+</script>

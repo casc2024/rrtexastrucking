@@ -1,0 +1,49 @@
+﻿.container {
+    max-width: 960px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espacio interno alrededor del contenido */    
+    
+}
+
+footer {
+    text-align: center; /* Alinea el texto al centro */
+    margin-top: 20px; /* Margen superior */
+    padding-top: 10px; /* Espaciado interno superior */
+    border-top: 1px solid #ddd; /* Borde superior */
+}
+
+footer p {
+    font-size: 14px; /* Tamaño de fuente */
+    color: #666; /* Color de texto */
+}
+
+
+/* Estilo para el contenedor del input file */
+.file-input {
+    margin-bottom: 15px; /* Espacio inferior entre elementos */
+}
+
+    /* Estilo para el label */
+.file-input label {
+    display: block; /* Mostrar como bloque para ocupar toda la línea */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 5px; /* Espacio inferior entre el label y el input */
+}
+
+/* Estilo para el input type file */
+.file-input input[type="file"] {
+    padding: 8px; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Borde redondeado */
+    background-color: #fff; /* Color de fondo */
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+}
+
+/* Estilo para el input type file al enfocarse */
+.file-input input[type="file"]:focus {
+    outline: none; /* Eliminar el contorno al enfocarse */
+    border-color: #66afe9; /* Cambiar color de borde al enfocarse */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6); /* Sombra al enfocarse */
+}

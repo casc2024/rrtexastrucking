@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>
+    function mostrarAlerta(mensaje, tipo) {
+        var alerta = $('#miAlerta');
+        alerta.removeClass('alert-info alert-success alert-warning alert-danger');
+
+        switch (tipo) {
+            case 'info':
+                alerta.addClass('alert-info');
+                break;
+            case 'success':
+                alerta.addClass('alert-success');
+                break;
+            case 'warning':
+                alerta.addClass('alert-warning');
+                break;
+            case 'danger':
+                alerta.addClass('alert-danger');
+                break;
+            default:
+                alerta.addClass('alert-info');
+        }
+
+        alerta.html(mensaje);
+        alerta.addClass('show');
+
+        setTimeout(function () {
+            alerta.removeClass('show');
+        }, 3000);
+    } 
+</script>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            @Html.ActionLink("UPDATE TEMPLATE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @*<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>*@            
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        
+        <footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

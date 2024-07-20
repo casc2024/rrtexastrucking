@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updateTemplateWeb", "updateTemplateWeb\updateTemplateWeb.csproj", "{529438A4-4AB5-4534-B8DF-410AADE7B6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updateTemplateWebv2", "updateTemplateWebv2\updateTemplateWebv2.csproj", "{787AB027-6642-4BF1-9908-CFA3A1688D58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{529438A4-4AB5-4534-B8DF-410AADE7B6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529438A4-4AB5-4534-B8DF-410AADE7B6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529438A4-4AB5-4534-B8DF-410AADE7B6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529438A4-4AB5-4534-B8DF-410AADE7B6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{787AB027-6642-4BF1-9908-CFA3A1688D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787AB027-6642-4BF1-9908-CFA3A1688D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787AB027-6642-4BF1-9908-CFA3A1688D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787AB027-6642-4BF1-9908-CFA3A1688D58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {635B88B5-3DFF-4FEB-9E5F-E553C17FAA26}
+	EndGlobalSection
+EndGlobal
